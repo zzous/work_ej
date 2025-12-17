@@ -1,0 +1,331 @@
+// 공통 변수 및 믹스인 import
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+// 워크플로우 생성 페이지
+.workflow-create-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: $bg-gray;
+  box-sizing: border-box;
+}
+
+.workflow-create-card {
+  width: 100%;
+  background: white;
+  border-radius: $border-radius;
+  margin: 0 auto;
+}
+
+// 페이지 헤더
+.page-header {
+  padding: $spacing-xl $spacing-xxl;
+  border-bottom: 1px solid $border-color;
+  background: white;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+// 안내 박스
+.info-box {
+  @include flex-start;
+  gap: $spacing-md;
+  background: $bg-info;
+  padding: $spacing-lg $spacing-xxxl;
+  border-left: 4px solid $info-color;
+  margin: 0;
+}
+
+.info-icon {
+  color: $info-color;
+  flex-shrink: 0;
+}
+
+.info-text {
+  color: $primary-dark;
+  font-size: $font-md;
+  line-height: 1.6;
+
+  p {
+    margin: 0;
+    padding: 2px 0;
+  }
+}
+
+// 폼 영역
+.form-content {
+  padding: $spacing-xxl;
+}
+
+.form-row {
+  margin-bottom: $spacing-xl;
+  border-bottom: 1px solid $border-light;
+  padding-bottom: $spacing-xl;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+.label-col {
+  display: flex;
+  align-items: flex-start;
+  padding-top: $spacing-md;
+}
+
+.form-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: $text-primary;
+}
+
+.required {
+  color: $error-color;
+  margin-left: $spacing-xs;
+}
+
+.group-field {
+  max-width: 300px;
+}
+
+.group-btn {
+  height: 40px;
+}
+
+.helper-text {
+  margin-top: $spacing-sm;
+  font-size: 12px;
+  color: $text-secondary;
+}
+
+// 빈 그룹 영역
+.empty-groups {
+  border: 2px dashed #ccc;
+  border-radius: $border-radius;
+  padding: 60px 20px;
+  text-align: center;
+  background: $bg-light;
+}
+
+.empty-text {
+  margin-top: $spacing-lg;
+  color: $text-light;
+  font-size: 14px;
+}
+
+// 워크플로우 설정 영역
+.workflow-settings-row {
+  .form-label {
+    display: block;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+// 그룹 목록
+.group-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  gap: $spacing-md;
+
+  // 그룹이 1개일 때만 block으로
+  &:has(.group-item.full-width) {
+    display: block;
+  }
+}
+
+.group-item {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  background: $bg-gray;
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
+
+  // 그룹이 1개일 때는 전체 너비
+  &.full-width {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.group-header {
+  @include flex-start;
+  gap: $spacing-md;
+}
+
+.group-number {
+  font-weight: 600;
+  color: $text-secondary;
+  min-width: 20px;
+}
+
+.group-name {
+  font-size: 15px;
+  color: $text-primary;
+}
+
+.group-actions {
+  display: flex;
+  gap: $spacing-xs;
+  margin-left: auto;
+}
+
+// 액션 버튼
+.action-buttons {
+  @include flex-center;
+  gap: $spacing-md;
+  padding: $spacing-xxl $spacing-xxxl;
+  border-top: 1px solid $border-color;
+  background: $bg-light;
+}
+
+.action-btn {
+  min-width: 140px;
+  font-weight: 600;
+}
+
+// WORK 목록
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1px solid $border-color;
+
+  // 그룹이 1개일 때 가로로 배치
+  &.horizontal {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    @include custom-scrollbar(8px);
+
+    .work-item-card {
+      width: 260px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// WORK 카드
+.work-item-card {
+  background: white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-sm;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.work-item-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding-bottom: $spacing-sm;
+  border-bottom: 1px solid $border-light;
+}
+
+.work-number-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #9e9e9e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.work-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: $text-secondary;
+}
+
+.work-item-content {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.work-value {
+  font-size: 14px;
+  color: $primary-color;
+  font-weight: 500;
+  flex: 1;
+}
+
+.work-description-section {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.work-description {
+  font-size: 13px;
+  color: #555;
+  flex: 1;
+}
+
+.work-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $spacing-sm;
+  border-top: 1px solid $border-light;
+}
+
+.work-payment {
+  display: flex;
+  align-items: center;
+}
+
+.payment-label {
+  font-size: 13px;
+  color: $text-secondary;
+}
+
+.work-actions {
+  display: flex;
+  gap: $spacing-xs;
+}
+
+// 저장 데이터 미리보기
+.saved-data-card {
+  width: 100%;
+  max-width: 1600px;
+  background: white;
+  border-radius: $border-radius;
+  margin: 0 auto;
+}
+
+.saved-data-content {
+  @include custom-scrollbar;
+  padding: $spacing-xxl;
+  margin: 0;
+  background: $bg-gray;
+  color: $text-primary;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: $font-sm;
+  line-height: 1.6;
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+

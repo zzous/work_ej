@@ -1,0 +1,86 @@
+// ============================================
+// 공통 변수 (Global Variables)
+// ============================================
+
+// 색상 (Colors)
+$primary-color: #1976d2;
+$primary-dark: #1565c0;
+$error-color: #f44336;
+$warning-color: #f57c00;
+$info-color: #2196f3;
+$success-color: #4caf50;
+
+// 배경색 (Background Colors)
+$bg-white: #ffffff;
+$bg-gray: #f5f5f5;
+$bg-light: #fafafa;
+$bg-hover: #f8f9fa;
+$bg-info: #e3f2fd;
+
+// 테두리 색상 (Border Colors)
+$border-color: #e0e0e0;
+$border-light: #f0f0f0;
+$border-dark: #ccc;
+
+// 텍스트 색상 (Text Colors)
+$text-primary: #333;
+$text-secondary: #666;
+$text-light: #999;
+$text-disabled: #bbb;
+
+// 테두리 반경 (Border Radius)
+$border-radius-xs: 4px;
+$border-radius-sm: 6px;
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// 간격 (Spacing)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 20px;
+$spacing-xxl: 24px;
+$spacing-xxxl: 32px;
+$spacing-xxxxl: 40px;
+
+// 폰트 크기 (Font Sizes)
+$font-xs: 12px;
+$font-sm: 13px;
+$font-md: 14px;
+$font-lg: 15px;
+$font-xl: 16px;
+$font-xxl: 18px;
+$font-xxxl: 24px;
+
+// 폰트 굵기 (Font Weights)
+$font-light: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+// 그림자 (Shadows)
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+// 전환 (Transitions)
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// 반응형 중단점 (Breakpoints)
+$breakpoint-xs: 0;
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1264px;
+$breakpoint-xl: 1904px;
+

@@ -1,0 +1,133 @@
+// 공통 변수 및 믹스인 import
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+// 워크플로우 목록 페이지
+.workflow-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px;
+  background: $bg-gray;
+  box-sizing: border-box;
+}
+
+.workflow-card {
+  width: 100%;
+  background: white;
+  border-radius: $border-radius;
+  margin: 0 auto;
+}
+
+// 헤더
+.workflow-header {
+  @include flex-between;
+  padding: $spacing-xxl $spacing-xxxl;
+  border-bottom: 1px solid $border-color;
+  background: white;
+}
+
+.workflow-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+// 검색 바
+.search-bar {
+  @include flex-start;
+  gap: $spacing-lg;
+  padding: $spacing-xl $spacing-xxxl;
+  background: white;
+  border-bottom: 1px solid $border-color;
+}
+
+.search-field {
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.filter-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.date-display {
+  color: $text-secondary;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.items-per-page {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+// 데이터 테이블
+.workflow-table {
+  background: white;
+  width: 100% !important;
+
+  :deep(.v-table__wrapper) {
+    width: 100% !important;
+  }
+
+  :deep(table) {
+    width: 100% !important;
+  }
+
+  :deep(.v-data-table__th) {
+    background-color: $bg-light !important;
+    font-weight: 600 !important;
+    color: $text-primary !important;
+    border-bottom: 2px solid $border-color !important;
+    padding: $spacing-lg !important;
+  }
+
+  :deep(.v-data-table__td) {
+    padding: $spacing-lg !important;
+    border-bottom: 1px solid $border-light !important;
+  }
+
+  :deep(tbody tr:hover) {
+    background-color: $bg-hover !important;
+  }
+
+  // Items per page 숨기기
+  :deep(.v-data-table-footer__items-per-page) {
+    display: none !important;
+  }
+}
+
+// 테이블 셀 스타일
+.doc-number {
+  font-weight: 500;
+  color: $text-primary;
+}
+
+.workflow-link {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.workflow-type {
+  color: $text-secondary;
+  font-size: 14px;
+}
+
+.created-date {
+  color: $text-secondary;
+  font-size: 14px;
+}
+
