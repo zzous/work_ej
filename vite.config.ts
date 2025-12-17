@@ -7,6 +7,9 @@ import vuetify from 'vite-plugin-vuetify'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.GITHUB_REPOSITORY 
+    ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
+    : '/',
   plugins: [
     vue(),
     vueDevTools(),

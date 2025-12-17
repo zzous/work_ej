@@ -49,6 +49,24 @@ npm run build
 npm run preview
 ```
 
+## GitHub Pages 배포
+
+이 프로젝트는 GitHub Actions를 통해 자동으로 GitHub Pages에 배포됩니다.
+
+### 배포 설정
+
+1. GitHub 리포지토리에서 **Settings** → **Pages**로 이동
+2. **Source**를 **GitHub Actions**로 설정
+3. `main` 또는 `master` 브랜치에 푸시하면 자동으로 배포됩니다
+
+### 수동 배포
+
+```sh
+npm run deploy
+```
+
+배포 후 사이트는 `https://[사용자명].github.io/[리포지토리명]/`에서 확인할 수 있습니다.
+
 ## 프로젝트 구조
 
 ```
